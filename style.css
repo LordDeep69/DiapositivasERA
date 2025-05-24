@@ -1,0 +1,2430 @@
+:root {
+    --color-primary: #1E3A8A;
+    --color-secondary: #10B981;
+    --color-accent: #F59E0B;
+    --color-light: #F3F4F6;
+    --color-dark: #1F2937;
+}
+
+/* Configuración personalizada para Reveal.js */
+.reveal {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* Más estilos personalizados irán aquí */
+
+/* Variables globales */
+:root {
+    --color-primary: #1E3A8A;
+    --color-secondary: #10B981;
+    --color-accent: #F59E0B;
+    --color-light: #F3F4F6;
+    --color-dark: #1F2937;
+    
+    /* Variables de dimensiones responsivas */
+    --slide-padding: clamp(1rem, 4vw, 4rem);
+    --title-size: clamp(2.5rem, 7vw, 7rem);
+    --subtitle-size: clamp(1.25rem, 2.5vw, 2rem);
+    --icon-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+/* Reset y configuración base de Reveal.js */
+.reveal {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: var(--color-dark);
+}
+
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal .slides section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    box-sizing: border-box;
+}
+
+/* Estilos específicos para la portada */
+.portada-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo con imagen */
+#portada-bg {
+    transform: scale(1.1);
+    transition: transform 20s ease-in-out;
+}
+
+.portada-slide.present #portada-bg {
+    transform: scale(1);
+}
+
+/* Contenedor de iconos de energía */
+.energy-icon-wrapper {
+    position: relative;
+    width: clamp(3rem, 5vw, 4rem);
+    height: clamp(3rem, 5vw, 4rem);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.energy-icon-wrapper:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.energy-icon-wrapper i {
+    font-size: var(--icon-size);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Partículas animadas */
+.particles-container {
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.particle-1 {
+    width: clamp(100px, 15vw, 200px);
+    height: clamp(100px, 15vw, 200px);
+    top: 10%;
+    left: -5%;
+    animation: float-1 20s infinite ease-in-out;
+    opacity: 0.1;
+}
+
+.particle-2 {
+    width: clamp(80px, 12vw, 150px);
+    height: clamp(80px, 12vw, 150px);
+    top: 60%;
+    right: -3%;
+    animation: float-2 25s infinite ease-in-out;
+    opacity: 0.08;
+}
+
+.particle-3 {
+    width: clamp(60px, 10vw, 120px);
+    height: clamp(60px, 10vw, 120px);
+    bottom: 20%;
+    left: 10%;
+    animation: float-3 30s infinite ease-in-out;
+    opacity: 0.06;
+}
+
+.particle-4 {
+    width: clamp(40px, 8vw, 80px);
+    height: clamp(40px, 8vw, 80px);
+    top: 40%;
+    right: 20%;
+    animation: float-1 22s infinite ease-in-out reverse;
+    opacity: 0.05;
+}
+
+.particle-5 {
+    width: clamp(120px, 18vw, 250px);
+    height: clamp(120px, 18vw, 250px);
+    bottom: -10%;
+    right: 30%;
+    animation: float-2 28s infinite ease-in-out;
+    opacity: 0.04;
+}
+
+/* Animaciones de partículas */
+@keyframes float-1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(30px, -30px) rotate(120deg);
+    }
+    66% {
+        transform: translate(-20px, 20px) rotate(240deg);
+    }
+}
+
+@keyframes float-2 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(-30px, -50px) scale(1.1);
+    }
+}
+
+@keyframes float-3 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(20px, -20px) rotate(90deg);
+    }
+    50% {
+        transform: translate(-10px, -40px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-30px, 10px) rotate(270deg);
+    }
+}
+
+/* Ajustes de tipografía responsiva */
+.reveal h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.reveal .portada-slide h1 {
+    font-size: var(--title-size);
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.reveal .portada-slide p {
+    font-size: var(--subtitle-size);
+    line-height: 1.4;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto glow para el icono principal */
+@keyframes pulse-glow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+}
+
+/* Media queries para ajustes finos */
+@media (max-width: 768px) {
+    .energy-icon-wrapper {
+        margin: 0.25rem;
+    }
+    
+    .reveal .portada-slide h1 {
+        margin-bottom: 1rem;
+    }
+    
+    .particle {
+        opacity: 0.03 !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    :root {
+        --title-size: 7rem;
+        --subtitle-size: 2.5rem;
+        --icon-size: 2.5rem;
+    }
+}
+
+/* Ajustes para modo presentación */
+@media (min-aspect-ratio: 16/9) {
+    .portada-slide .flex {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* Animación de entrada suave */
+.reveal .slides section.present {
+    animation: slideEntry 0.8s ease-out;
+}
+
+@keyframes slideEntry {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Asegurar que los elementos no se desborden */
+.reveal .slides section > * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Optimización para impresión */
+@media print {
+    .particles-container,
+    .animate__animated {
+        animation: none !important;
+    }
+    
+    #portada-bg {
+        transform: none !important;
+    }
+}
+
+
+/* ===== DIAPOSITIVA 2: ÍNDICE ===== */
+/* ===== DIAPOSITIVA 2: ÍNDICE - REESCRITO ===== */
+
+/* Reset específico para la diapositiva de índice */
+.indice-slide {
+    background-color: #f8fafc !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Contenedor principal con scroll */
+.indice-slide > div {
+    width: 100% !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 3rem 2rem !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .indice-slide > div {
+        padding: 1.5rem 1rem !important;
+    }
+}
+
+/* Título principal */
+.indice-slide h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem) !important;
+    margin-bottom: 1rem !important;
+    color: var(--color-primary) !important;
+}
+
+/* Línea decorativa bajo el título */
+.indice-slide h2 + div {
+    margin-bottom: 2rem !important;
+}
+
+/* Grid de tarjetas - Simplificado */
+.indice-slide .grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-bottom: 2rem !important;
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 640px) {
+    .indice-slide .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+}
+
+/* Tarjetas rediseñadas */
+.index-card {
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    border: 1px solid #e5e7eb !important;
+    position: relative !important;
+    min-height: 120px !important;
+}
+
+.index-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+    border-color: var(--color-primary) !important;
+}
+
+/* Números de índice ajustados */
+.index-number {
+    width: 3rem !important;
+    height: 3rem !important;
+    min-width: 3rem !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+    flex-shrink: 0 !important;
+}
+
+/* Contenido de las tarjetas */
+.index-card h3 {
+    font-size: clamp(1.1rem, 2vw, 1.5rem) !important;
+    margin-bottom: 0.5rem !important;
+    color: var(--color-dark) !important;
+    line-height: 1.3 !important;
+}
+
+.index-card p {
+    font-size: clamp(0.875rem, 1.5vw, 1rem) !important;
+    color: #6b7280 !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+}
+
+/* Iconos y metadatos */
+.index-card .flex.items-center {
+    margin-top: 0.75rem !important;
+    font-size: 0.875rem !important;
+}
+
+.index-card i {
+    font-size: 1rem !important;
+}
+
+/* Sección inferior fija */
+.indice-slide > div > div:last-child {
+    margin-top: auto !important;
+    padding-top: 1.5rem !important;
+    border-top: 1px solid #e5e7eb !important;
+    background: #f8fafc !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+/* Scrollbar personalizado */
+.indice-slide > div::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.indice-slide > div::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 4px !important;
+}
+
+.indice-slide > div::-webkit-scrollbar-thumb {
+    background: var(--color-primary) !important;
+    border-radius: 4px !important;
+    opacity: 0.7 !important;
+}
+
+.indice-slide > div::-webkit-scrollbar-thumb:hover {
+    opacity: 1 !important;
+}
+
+/* Eliminar max-width restrictivos */
+.indice-slide .max-w-7xl {
+    max-width: 100% !important;
+}
+
+/* Asegurar que flex-1 funcione correctamente */
+.indice-slide .flex-1 {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+}
+
+/* Animaciones simplificadas */
+.index-card {
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+.indice-slide.present .index-card {
+    animation: fadeInScale 0.5s ease-out forwards !important;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Stagger animation para las tarjetas */
+.indice-slide.present .index-card:nth-child(1) { animation-delay: 0.1s !important; }
+.indice-slide.present .index-card:nth-child(2) { animation-delay: 0.2s !important; }
+.indice-slide.present .index-card:nth-child(3) { animation-delay: 0.3s !important; }
+.indice-slide.present .index-card:nth-child(4) { animation-delay: 0.4s !important; }
+.indice-slide.present .index-card:nth-child(5) { animation-delay: 0.5s !important; }
+.indice-slide.present .index-card:nth-child(6) { animation-delay: 0.6s !important; }
+
+/* Override de Reveal.js */
+.reveal .slides section.indice-slide {
+    display: block !important;
+    padding: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+}
+
+/* Asegurar visibilidad del contenido */
+.indice-slide * {
+    visibility: visible !important;
+}
+
+/* Media query para pantallas muy grandes */
+@media (min-width: 1920px) {
+    .indice-slide .grid {
+        max-width: 1600px !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* Ajuste para altura pequeña */
+@media (max-height: 700px) {
+    .indice-slide > div {
+        padding: 1.5rem !important;
+    }
+    
+    .index-card {
+        padding: 1rem !important;
+        min-height: 100px !important;
+    }
+    
+    .index-number {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        font-size: 1rem !important;
+    }
+}
+
+
+/* ===== DIAPOSITIVA 3: INTRODUCCIÓN ===== */
+
+/* Contenedor principal */
+.introduccion-slide {
+    background-color: #ffffff !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Contenedor con scroll */
+.introduccion-slide > div {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) #f1f1f1;
+}
+
+.introduccion-slide > div::-webkit-scrollbar {
+    width: 8px;
+}
+
+.introduccion-slide > div::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.introduccion-slide > div::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+    opacity: 0.7;
+}
+
+/* Grid responsivo */
+.introduccion-slide .grid {
+    display: grid !important;
+    align-items: start !important;
+}
+
+@media (min-width: 1024px) {
+    .introduccion-slide .grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2rem !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    .introduccion-slide .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* Cajas de contenido */
+.introduccion-slide .bg-white\/80,
+.introduccion-slide .bg-white {
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.introduccion-slide .bg-white\/80:hover,
+.introduccion-slide .bg-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Contadores animados */
+.counter {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+}
+
+/* Barras de progreso de potencial */
+.potential-bar {
+    position: relative;
+}
+
+.potential-bar .bg-gradient-to-r {
+    transition: width 1.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.potential-bar .bg-gradient-to-r::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Canvas para gráficos */
+#mixEnergeticoChart {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Imagen destacada - CORRECCIÓN */
+#intro-image {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 12rem !important;
+    position: relative !important;
+    background-color: #f3f4f6; /* Color de fondo mientras carga */
+}
+
+/* Loader para la imagen */
+#intro-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#intro-image.loading::before {
+    opacity: 1;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Iconos con efecto */
+.introduccion-slide .fa-check-circle {
+    animation: checkPulse 2s ease-in-out infinite;
+}
+
+@keyframes checkPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Títulos y textos */
+.introduccion-slide h2 {
+    font-size: clamp(1.75rem, 4vw, 3rem) !important;
+}
+
+.introduccion-slide h3 {
+    font-size: clamp(1.125rem, 2vw, 1.25rem) !important;
+}
+
+/* Efecto hover en el botón de navegación */
+.introduccion-slide button {
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.introduccion-slide button:hover {
+    background-color: rgba(30, 58, 138, 0.1);
+    transform: translateX(4px);
+}
+
+/* Animación de entrada para elementos */
+.introduccion-slide.present .counter {
+    animation: countUp 2s ease-out forwards;
+}
+
+.introduccion-slide.present .potential-bar .bg-gradient-to-r {
+    animation: fillBar 1.5s ease-out forwards;
+}
+
+@keyframes fillBar {
+    from {
+        width: 0% !important;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 640px) {
+    .introduccion-slide .grid > div {
+        padding: 1rem !important;
+    }
+    
+    .introduccion-slide .text-3xl {
+        font-size: 1.5rem !important;
+    }
+    
+    #intro-image {
+        min-height: 10rem !important;
+    }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1920px) {
+    .introduccion-slide .grid {
+        max-width: 1600px !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* Sombras y profundidad */
+.introduccion-slide .shadow-lg {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+                0 5px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Animación para el icono del header */
+.introduccion-slide .fa-globe-americas {
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estados de los elementos interactivos */
+.introduccion-slide .bg-gradient-to-br {
+    position: relative;
+    overflow: hidden;
+}
+
+.introduccion-slide .bg-gradient-to-br::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.3) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.introduccion-slide .bg-gradient-to-br:hover::before {
+    opacity: 1;
+}
+
+/* Fix para el overflow en Reveal.js */
+.reveal .slides section.introduccion-slide {
+    overflow: visible !important;
+}
+
+.introduccion-slide > div {
+    max-height: 100vh !important;
+    overflow-y: auto !important;
+}
+
+/* Optimización de impresión */
+@media print {
+    .introduccion-slide {
+        background: white !important;
+    }
+    
+    .introduccion-slide .animate__animated {
+        animation: none !important;
+    }
+    
+    #intro-image::before {
+        display: none !important;
+    }
+}
+
+
+/* ===== DIAPOSITIVA 4: BIOMASA - ESTILOS MÍNIMOS ===== */
+
+/* Animaciones para los iconos de las tarjetas */
+@keyframes sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+@keyframes rotate-icon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes grow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes bounce-icon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Aplicar animaciones a los iconos */
+.biomass-type-card .fa-tree { 
+    animation: sway 3s ease-in-out infinite; 
+}
+
+.biomass-type-card .fa-recycle { 
+    animation: rotate-icon 4s linear infinite; 
+}
+
+.biomass-type-card .fa-seedling { 
+    animation: grow 2s ease-in-out infinite; 
+}
+
+.biomass-type-card .fa-paw { 
+    animation: bounce-icon 2s ease-in-out infinite; 
+}
+
+/* Pausar animaciones al hover */
+.biomass-type-card:hover i {
+    animation-play-state: paused;
+}
+
+/* Línea superior animada para las tarjetas */
+.biomass-type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    transition: left 0.6s ease;
+}
+
+.biomass-type-card:nth-child(1)::before { background: #16a34a; }
+.biomass-type-card:nth-child(2)::before { background: #ea580c; }
+.biomass-type-card:nth-child(3)::before { background: #2563eb; }
+.biomass-type-card:nth-child(4)::before { background: #9333ea; }
+
+.biomass-type-card:hover::before {
+    left: 0;
+}
+
+/* Canvas del ciclo del carbono */
+#carbonCycleCanvas {
+    max-width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Animación de shimmer para la línea del título */
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Efecto pulse para el indicador activo */
+@keyframes pulse-ring {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.biomasa-slide-1 .bg-green-100 {
+    animation: pulse-ring 2s infinite;
+}
+
+/* Scrollbar personalizado solo para esta diapositiva */
+.biomasa-slide-1 > div::-webkit-scrollbar {
+    width: 8px;
+}
+
+.biomasa-slide-1 > div::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 4px;
+}
+
+.biomasa-slide-1 > div::-webkit-scrollbar-thumb {
+    background: #10B981;
+    border-radius: 4px;
+}
+
+/* Asegurar que el h2 no cambie de color (mantener el de Tailwind) */
+.biomasa-slide-1 h2 {
+    color: inherit;
+}
+
+
+
+/* ===== DIAPOSITIVA 5: BIOMASA - PROCESOS DE CONVERSIÓN ===== */
+
+/* Tarjetas de proceso - efectos hover */
+.process-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto de brillo en hover */
+.process-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.process-card:hover::before {
+    opacity: 1;
+}
+
+/* Animación de los iconos principales */
+.process-card .fa-fire {
+    animation: flicker 2s ease-in-out infinite;
+}
+
+.process-card .fa-wind {
+    animation: blow 3s ease-in-out infinite;
+}
+
+.process-card .fa-bacteria {
+    animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes blow {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+/* Pausar animaciones en hover */
+.process-card:hover i {
+    animation-play-state: paused;
+}
+
+/* Barras de eficiencia */
+.efficiency-bar {
+    width: 0;
+    transition: width 1.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo en las barras */
+.efficiency-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: shimmer-bar 2s infinite;
+}
+
+@keyframes shimmer-bar {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Canvas del gráfico comparativo */
+#processComparisonChart {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Animación de entrada para las temperaturas */
+.process-card .text-2xl {
+    animation: tempPulse 2s ease-in-out infinite;
+}
+
+@keyframes tempPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Colores específicos para cada proceso */
+.process-card:nth-child(1) .bg-orange-500 {
+    box-shadow: 0 0 20px rgba(251, 146, 60, 0.5);
+}
+
+.process-card:nth-child(2) .bg-blue-500 {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.process-card:nth-child(3) .bg-green-500 {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+/* Scrollbar personalizado */
+.biomasa-slide-2 > div::-webkit-scrollbar {
+    width: 8px;
+}
+
+.biomasa-slide-2 > div::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 4px;
+}
+
+.biomasa-slide-2 > div::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #10B981 0%, #F59E0B 100%);
+    border-radius: 4px;
+}
+
+/* Animación del dato clave */
+.biomasa-slide-2 .fa-lightbulb {
+    animation: lightbulb-glow 2s ease-in-out infinite;
+}
+
+@keyframes lightbulb-glow {
+    0%, 100% { 
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
+    }
+    50% { 
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8));
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .process-card {
+        padding: 1rem !important;
+    }
+    
+    .process-card .w-16 {
+        width: 3rem !important;
+        height: 3rem !important;
+    }
+    
+    .process-card .text-2xl {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Efecto de entrada escalonado */
+.biomasa-slide-2.present .efficiency-bar {
+    animation: fillBar 1.5s ease-out forwards;
+}
+
+.biomasa-slide-2.present .efficiency-bar[data-efficiency="30"] {
+    animation-delay: 0.5s;
+    width: 30%;
+}
+
+.biomasa-slide-2.present .efficiency-bar[data-efficiency="42"] {
+    animation-delay: 0.7s;
+    width: 42%;
+}
+
+.biomasa-slide-2.present .efficiency-bar[data-efficiency="57"] {
+    animation-delay: 0.9s;
+    width: 57%;
+}
+
+/* Hover en los productos */
+.process-card .fa-bolt,
+.process-card .fa-plug,
+.process-card .fa-cloud,
+.process-card .fa-gas-pump,
+.process-card .fa-fire-flame-simple,
+.process-card .fa-seedling {
+    transition: transform 0.3s ease;
+}
+
+.process-card:hover .fas {
+    transform: scale(1.2);
+}
+
+/* Asegurar que el h2 mantenga su color */
+.biomasa-slide-2 h2 {
+    color: inherit;
+}
+
+/* Optimización para impresión */
+@media print {
+    .process-card {
+        page-break-inside: avoid;
+    }
+    
+    .efficiency-bar::after {
+        display: none;
+    }
+}
+
+/* ===== DIAPOSITIVA 6: BIOMASA - ANÁLISIS Y CASOS DE ÉXITO ===== */
+
+/* Animaciones para los items de ventajas */
+.advantage-item {
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: -0.5rem;
+}
+
+.advantage-item:hover {
+    background-color: rgba(34, 197, 94, 0.1);
+    transform: translateX(4px);
+}
+
+/* Animación de los iconos circulares */
+.advantage-item .bg-green-500 {
+    transition: all 0.3s ease;
+}
+
+.advantage-item:hover .bg-green-500 {
+    transform: scale(1.1) rotate(360deg);
+}
+
+/* Estilos para los retos */
+.challenge-item {
+    padding: 0.75rem;
+    background: white;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.challenge-item:hover {
+    border-color: #fb923c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(251, 146, 60, 0.15);
+}
+
+/* Casos de éxito - efecto hover */
+.success-case {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.success-case::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.success-case:hover::before {
+    left: 100%;
+}
+
+.success-case:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Animación de banderas */
+.success-case span.text-2xl {
+    display: inline-block;
+    animation: flag-wave 2s ease-in-out infinite;
+}
+
+@keyframes flag-wave {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+/* Contadores de proyección */
+.projection-stat {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.projection-stat:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Indicador de madurez tecnológica */
+.biomasa-slide-3 .w-2.h-6 {
+    transition: all 0.3s ease;
+    animation: tech-level 1s ease-out forwards;
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+@keyframes tech-level {
+    to {
+        transform: scaleY(1);
+    }
+}
+
+.biomasa-slide-3 .w-2.h-6:nth-child(1) { animation-delay: 0.1s; }
+.biomasa-slide-3 .w-2.h-6:nth-child(2) { animation-delay: 0.2s; }
+.biomasa-slide-3 .w-2.h-6:nth-child(3) { animation-delay: 0.3s; }
+.biomasa-slide-3 .w-2.h-6:nth-child(4) { animation-delay: 0.4s; }
+.biomasa-slide-3 .w-2.h-6:nth-child(5) { animation-delay: 0.5s; }
+
+/* Scrollbar personalizado */
+.biomasa-slide-3 > div::-webkit-scrollbar {
+    width: 8px;
+}
+
+.biomasa-slide-3 > div::-webkit-scrollbar-track {
+    background: #e5e7eb;
+    border-radius: 4px;
+}
+
+.biomasa-slide-3 > div::-webkit-scrollbar-thumb {
+    background: #10B981;
+    border-radius: 4px;
+}
+
+/* Animación de los números en las tarjetas */
+.success-case .font-semibold {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Efecto pulse en los iconos principales */
+@keyframes icon-pulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+}
+
+.biomasa-slide-3 .fa-check-circle,
+.biomasa-slide-3 .fa-exclamation-triangle,
+.biomasa-slide-3 .fa-trophy {
+    animation: icon-pulse 2s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .success-case {
+        padding: 1rem !important;
+    }
+    
+    .success-case .grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Animación de entrada para estadísticas */
+.biomasa-slide-3.present .bg-green-50,
+.biomasa-slide-3.present .bg-orange-50 {
+    animation: slideInScale 0.6s ease-out;
+}
+
+@keyframes slideInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hover en el botón de navegación */
+.biomasa-slide-3 button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.biomasa-slide-3 button:hover {
+    background-color: rgba(30, 58, 138, 0.1);
+    transform: translateX(4px);
+}
+
+/* Asegurar que el h2 mantenga su color */
+.biomasa-slide-3 h2 {
+    color: inherit;
+}
+
+
+/* ===== DIAPOSITIVA 7: GEOTÉRMICA - PRINCIPIOS Y TIPOS ===== */
+
+/* Animaciones temáticas de calor/magma */
+@keyframes lava-flow {
+    0%, 100% { 
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
+    }
+    50% { 
+        background-position: 100% 50%;
+        filter: hue-rotate(20deg);
+    }
+}
+
+@keyframes heat-wave {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-5px) scale(1.05); opacity: 0.5; }
+}
+
+@keyframes steam-rise {
+    0% { 
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: translateY(-20px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Fondo con efecto de calor */
+.geotermica-slide-1 {
+    position: relative;
+    background: linear-gradient(135deg, #fef3f2 0%, #fee2e2 100%);
+    background-size: 200% 200%;
+    animation: lava-flow 20s ease infinite;
+}
+
+/* Tarjetas de recursos con efecto hover */
+.resource-type {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.resource-type::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: heat-wave 3s ease-in-out infinite;
+}
+
+.resource-type:hover::before {
+    opacity: 1;
+}
+
+.resource-type:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Animación de iconos de temperatura */
+.resource-type .fa-fire {
+    animation: flicker 2s ease-in-out infinite;
+}
+
+.resource-type .fa-temperature-half {
+    animation: temp-pulse 3s ease-in-out infinite;
+}
+
+.resource-type .fa-snowflake {
+    animation: cold-spin 4s linear infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.1); filter: brightness(1.2); }
+}
+
+@keyframes temp-pulse {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-2px); }
+    75% { transform: translateY(2px); }
+}
+
+@keyframes cold-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Tarjetas de tecnología */
+.tech-card {
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tech-card:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tech-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #dc2626, #f97316);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* Animación de vapor para la tarjeta de vapor seco */
+.tech-card:first-child::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(220, 38, 38, 0.2);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: steam-rise 2s ease-in-out infinite;
+}
+
+/* Zonas de potencial - efecto hover */
+.potential-zone {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.potential-zone:hover {
+    padding-left: 1rem;
+}
+
+.potential-zone .w-2.h-2 {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 0 currentColor;
+}
+
+.potential-zone:hover .w-2.h-2 {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0.1);
+}
+
+/* Canvas del gradiente térmico */
+#gradientChart {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Contadores animados */
+.key-stat {
+    position: relative;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.key-stat:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5rem;
+}
+
+.key-stat .counter {
+    font-variant-numeric: tabular-nums;
+    background: linear-gradient(135deg, currentColor, transparent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Barras de progreso animadas */
+.resource-type .bg-red-600,
+.resource-type .bg-orange-500,
+.resource-type .bg-blue-500 {
+    transition: width 1.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.resource-type .bg-red-600::after,
+.resource-type .bg-orange-500::after,
+.resource-type .bg-blue-500::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* Scrollbar personalizado */
+.geotermica-slide-1 > div::-webkit-scrollbar {
+    width: 8px;
+}
+
+.geotermica-slide-1 > div::-webkit-scrollbar-track {
+    background: #fee2e2;
+    border-radius: 4px;
+}
+
+.geotermica-slide-1 > div::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #dc2626 0%, #f97316 100%);
+    border-radius: 4px;
+}
+
+/* Animación del icono principal */
+.geotermica-slide-1 .fa-mountain {
+    animation: mountain-glow 3s ease-in-out infinite;
+}
+
+@keyframes mountain-glow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    }
+    50% { 
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tech-card {
+        padding: 0.75rem !important;
+    }
+    
+    .tech-card h5 {
+        font-size: 0.75rem !important;
+    }
+    
+    .resource-type {
+        padding: 1rem !important;
+    }
+}
+
+/* Efecto de profundidad en las columnas */
+.geotermica-slide-1 .lg\:col-span-1:nth-child(1) {
+    animation: depth-1 0.8s ease-out;
+}
+
+.geotermica-slide-1 .lg\:col-span-1:nth-child(2) {
+    animation: depth-2 0.8s ease-out 0.2s both;
+}
+
+.geotermica-slide-1 .lg\:col-span-1:nth-child(3) {
+    animation: depth-3 0.8s ease-out 0.4s both;
+}
+
+@keyframes depth-1 {
+    from { opacity: 0; transform: translateZ(-100px) rotateY(-5deg); }
+    to { opacity: 1; transform: translateZ(0) rotateY(0); }
+}
+
+@keyframes depth-2 {
+    from { opacity: 0; transform: translateZ(-150px); }
+    to { opacity: 1; transform: translateZ(0); }
+}
+
+@keyframes depth-3 {
+    from { opacity: 0; transform: translateZ(-100px) rotateY(5deg); }
+    to { opacity: 1; transform: translateZ(0) rotateY(0); }
+}
+
+/* Efecto de calor en hover general */
+.geotermica-slide-1 .bg-white:hover,
+.geotermica-slide-1 .bg-gradient-to-b:hover {
+    box-shadow: 0 8px 32px rgba(220, 38, 38, 0.15);
+}
+
+/* Animación de entrada para estadísticas */
+.geotermica-slide-1.present .key-stat {
+    animation: stat-pop 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.geotermica-slide-1.present .key-stat:nth-child(1) { animation-delay: 0.1s; }
+.geotermica-slide-1.present .key-stat:nth-child(2) { animation-delay: 0.2s; }
+.geotermica-slide-1.present .key-stat:nth-child(3) { animation-delay: 0.3s; }
+.geotermica-slide-1.present .key-stat:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes stat-pop {
+    from {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Asegurar que el h2 mantenga su color */
+.geotermica-slide-1 h2 {
+    color: inherit;
+}
+
+/* Optimización para impresión */
+@media print {
+    .geotermica-slide-1 {
+        background: white !important;
+        animation: none !important;
+    }
+    
+    .resource-type::before,
+    .tech-card::after {
+        display: none !important;
+    }
+}
+
+
+/* ===== DIAPOSITIVA 8: GEOTÉRMICA - TECNOLOGÍAS DE GENERACIÓN ===== */
+
+/* Tarjetas de detalle de tecnología */
+.tech-detail-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.tech-detail-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.tech-detail-card:hover::before {
+    opacity: 1;
+}
+
+.tech-detail-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Canvas para diagramas */
+#dryStreamDiagram,
+#flashPlantDiagram,
+#binaryCycleDiagram {
+    width: 100%;
+    height: 100%;
+    min-height: 16rem;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+/* Animación de vapor para el diagrama de vapor seco */
+@keyframes steam-flow {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-10px) scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Animación de flujo para flash */
+@keyframes flash-flow {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Animación cíclica para binario */
+@keyframes cycle-flow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Cajas de información */
+.info-box {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.info-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-box ul li {
+    transition: all 0.2s ease;
+    padding: 0.25rem;
+    margin: -0.25rem;
+    border-radius: 0.25rem;
+}
+
+.info-box ul li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(4px);
+}
+
+/* Iconos animados */
+.info-box .fa-temperature-high {
+    animation: temp-pulse 2s ease-in-out infinite;
+}
+
+.info-box .fa-tachometer-alt {
+    animation: gauge-swing 3s ease-in-out infinite;
+}
+
+.info-box .fa-percentage {
+    animation: percent-grow 2s ease-in-out infinite;
+}
+
+.info-box .fa-clock {
+    animation: clock-tick 1s steps(12) infinite;
+}
+
+@keyframes temp-pulse {
+    0%, 100% { transform: scale(1); color: #ef4444; }
+    50% { transform: scale(1.2); color: #dc2626; }
+}
+
+@keyframes gauge-swing {
+    0%, 100% { transform: rotate(-20deg); }
+    50% { transform: rotate(20deg); }
+}
+
+@keyframes percent-grow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes clock-tick {
+    to { transform: rotate(360deg); }
+}
+
+/* Cajas de ejemplo y comparación */
+.example-box,
+.comparison-mini,
+.future-box {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.example-box::after,
+.comparison-mini::after,
+.future-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    transform: translateX(-100%);
+    animation: scan-line 3s ease-in-out infinite;
+}
+
+@keyframes scan-line {
+    to { transform: translateX(100%); }
+}
+
+/* Sección de comparación */
+.comparison-section {
+    position: relative;
+    background-size: 200% 200%;
+    animation: gradient-shift 10s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Cajas de estadísticas */
+.stat-box {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.stat-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.stat-box .counter {
+    font-variant-numeric: tabular-nums;
+    display: inline-block;
+}
+
+/* Items de innovación */
+.innovation-item {
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.innovation-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.5) 50%, transparent 60%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.innovation-item:hover::before {
+    transform: translateX(100%);
+}
+
+.innovation-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animación de entrada para las tarjetas */
+.geotermica-slide-2.present .tech-detail-card {
+    animation: card-slide-in 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.geotermica-slide-2.present .tech-detail-card:nth-child(2) { animation-delay: 0.2s; }
+.geotermica-slide-2.present .tech-detail-card:nth-child(3) { animation-delay: 0.4s; }
+.geotermica-slide-2.present .tech-detail-card:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes card-slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efecto de calor en hover */
+.geotermica-slide-2 .bg-red-600:hover,
+.geotermica-slide-2 .bg-orange-500:hover,
+.geotermica-slide-2 .bg-blue-500:hover {
+    box-shadow: 0 0 20px currentColor;
+    animation: heat-glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes heat-glow {
+    from { filter: brightness(1); }
+    to { filter: brightness(1.2); }
+}
+
+/* Scrollbar personalizado */
+.geotermica-slide-2 > div::-webkit-scrollbar {
+    width: 8px;
+}
+
+.geotermica-slide-2 > div::-webkit-scrollbar-track {
+    background: #fee2e2;
+    border-radius: 4px;
+}
+
+.geotermica-slide-2 > div::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #dc2626 0%, #f97316 50%, #3b82f6 100%);
+    border-radius: 4px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .tech-detail-card {
+        padding: 1rem !important;
+    }
+    
+    .tech-detail-card .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    #dryStreamDiagram,
+    #flashPlantDiagram,
+    #binaryCycleDiagram {
+        min-height: 12rem;
+    }
+    
+    .comparison-section .grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .stat-box {
+        padding: 0.5rem;
+    }
+}
+
+/* Animación para los gráficos de comparación */
+#efficiencyComparisonChart,
+#costComparisonChart {
+    opacity: 0;
+    animation: fade-in-scale 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes fade-in-scale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Efecto de profundidad 3D */
+.geotermica-slide-2 .tech-detail-card:nth-child(odd) {
+    transform-origin: left center;
+}
+
+.geotermica-slide-2 .tech-detail-card:nth-child(even) {
+    transform-origin: right center;
+}
+
+.geotermica-slide-2.present .tech-detail-card:nth-child(odd) {
+    animation: slide-in-3d-left 0.8s ease-out forwards;
+}
+
+.geotermica-slide-2.present .tech-detail-card:nth-child(even) {
+    animation: slide-in-3d-right 0.8s ease-out forwards;
+}
+
+@keyframes slide-in-3d-left {
+    from {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(30deg) translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0) translateX(0);
+    }
+}
+
+@keyframes slide-in-3d-right {
+    from {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(-30deg) translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0) translateX(0);
+    }
+}
+
+/* Indicadores de eficiencia animados */
+.info-box strong {
+    color: inherit;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.info-box strong::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.info-box li:hover strong::after {
+    transform: scaleX(1);
+}
+
+/* Footer con efecto de fuego */
+.geotermica-slide-2 .bg-gradient-to-r.from-red-100 {
+    position: relative;
+    overflow: hidden;
+}
+
+.geotermica-slide-2 .bg-gradient-to-r.from-red-100::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #dc2626, #f97316, #fbbf24, #f97316, #dc2626);
+    background-size: 200% 100%;
+    animation: fire-line 3s linear infinite;
+}
+
+@keyframes fire-line {
+    to { background-position: -200% 0; }
+}
+
+/* Asegurar que el h2 mantenga su color */
+.geotermica-slide-2 h2 {
+    color: inherit;
+}
+
+/* Optimización para impresión */
+@media print {
+    .geotermica-slide-2 {
+        background: white !important;
+    }
+    
+    .tech-detail-card::before,
+    .innovation-item::before {
+        display: none !important;
+    }
+    
+    @keyframes * {
+        animation: none !important;
+    }
+}
+
+
+/* Diapositiva 9: Energía Geotérmica - Análisis Integral */
+.geotermica-slide-3 {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tarjetas de ventajas */
+.advantage-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.advantage-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-card .comparison-mini-bar {
+    margin-top: 8px;
+}
+
+/* Tarjetas de desafíos y soluciones */
+.challenge-solution-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.challenge-solution-card:hover {
+    transform: translateX(3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-solution-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: inherit;
+    transition: width 0.3s ease;
+}
+
+.challenge-solution-card:hover::before {
+    width: 8px;
+}
+
+/* Tarjetas de casos de éxito */
+.success-case-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.success-case-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+
+.success-case-card:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translate(20%, 20%);
+}
+
+.success-case-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-mini {
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.success-case-card:hover .stat-mini {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Mini casos */
+.mini-case {
+    transition: all 0.3s ease;
+}
+
+.mini-case:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: #e5e7eb;
+}
+
+/* Caja de proyección */
+.projection-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.projection-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #DC2626 0%, #F97316 100%);
+    animation: slideIn 2s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Barra de crecimiento geotérmico */
+.geothermal-growth-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.geothermal-growth-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Métricas de comparación */
+.comparison-metric {
+    transition: all 0.3s ease;
+}
+
+.comparison-metric:hover {
+    transform: scale(1.1);
+}
+
+.comparison-metric canvas {
+    transition: all 0.3s ease;
+}
+
+.comparison-metric:hover canvas {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Animaciones específicas para elementos */
+.geotermica-slide-3 .advantage-card {
+    animation: slideInFromLeft 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.geotermica-slide-3 .advantage-card:nth-child(2) { animation-delay: 0.1s; }
+.geotermica-slide-3 .advantage-card:nth-child(3) { animation-delay: 0.2s; }
+.geotermica-slide-3 .advantage-card:nth-child(4) { animation-delay: 0.3s; }
+.geotermica-slide-3 .advantage-card:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .success-case-card {
+        margin-bottom: 1rem;
+    }
+    
+    .comparison-metric canvas {
+        width: 80px !important;
+        height: 80px !important;
+    }
+}
+
+
+/* ===== ESTILOS PARA DIAPOSITIVAS DE ENERGÍA MAREOMOTRIZ ===== */
+
+/* Animaciones específicas para elementos mareomotrices */
+@keyframes waveMotion {
+    0%, 100% {
+        transform: translateY(0) scaleY(1);
+    }
+    50% {
+        transform: translateY(-10px) scaleY(1.1);
+    }
+}
+
+@keyframes tidalFlow {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Estilos para las cards de tecnología */
+.tech-type {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-type::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.tech-type:hover::before {
+    left: 100%;
+}
+
+.tech-type:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+}
+
+/* Estilos
+
+
+/* ===== ESTILOS PARA DIAPOSITIVAS DE SOLAR TÉRMICA ===== */
+
+/* Ajuste de tamaños de fuente */
+.solar-termica-slide-1 h2,
+.solar-termica-slide-2 h2,
+.solar-termica-slide-3 h2 {
+    font-size: clamp(1.875rem, 4vw, 2.5rem) !important;
+}
+
+/* Cards de tecnología */
+.tech-card {
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.15);
+}
+
+/* Proyectos showcase */
+.project-showcase {
+    transition: all 0.3s ease;
+}
+
+.project-showcase:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.2);
+}
+
+/* Items de innovación */
+.innovation-item {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.innovation-item:hover {
+    background-color: rgba(251, 191, 36, 0.05);
+}
+
+/* Items de rol */
+.role-item {
+    transition: all 0.2s ease;
+}
+
+.role-item:hover {
+    transform: translateX(5px);
+}
+
+/* Animación de contadores */
+.counter {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .solar-termica-slide-1 .grid,
+    .solar-termica-slide-2 .grid,
+    .solar-termica-slide-3 .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
